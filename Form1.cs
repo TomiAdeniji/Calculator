@@ -17,24 +17,14 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void buttonZero_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonThree_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSix_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonNine_Click(object sender, EventArgs e)
-        {
-
+            if (textDisplayResult.Text == "0")
+            {
+                textDisplayResult.Clear();
+            }
+            var button = (Button)sender;
+            textDisplayResult.Text = textDisplayResult.Text + button.Text;
         }
     }
 }

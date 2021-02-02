@@ -43,12 +43,13 @@ namespace Calculator
             this.buttonThree = new System.Windows.Forms.Button();
             this.buttonSubtract = new System.Windows.Forms.Button();
             this.buttonTwo = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.buttonOne = new System.Windows.Forms.Button();
             this.buttonZero = new System.Windows.Forms.Button();
             this.buttonPoint = new System.Windows.Forms.Button();
             this.buttonResult = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textDisplayResult = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSeven
@@ -61,6 +62,7 @@ namespace Calculator
             this.buttonSeven.TabIndex = 0;
             this.buttonSeven.Text = "7";
             this.buttonSeven.UseVisualStyleBackColor = true;
+            this.buttonSeven.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonEight
             // 
@@ -72,6 +74,7 @@ namespace Calculator
             this.buttonEight.TabIndex = 1;
             this.buttonEight.Text = "8";
             this.buttonEight.UseVisualStyleBackColor = true;
+            this.buttonEight.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonClearEntry
             // 
@@ -105,7 +108,7 @@ namespace Calculator
             this.buttonNine.TabIndex = 4;
             this.buttonNine.Text = "9";
             this.buttonNine.UseVisualStyleBackColor = true;
-            this.buttonNine.Click += new System.EventHandler(this.buttonNine_Click);
+            this.buttonNine.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonSix
             // 
@@ -117,7 +120,7 @@ namespace Calculator
             this.buttonSix.TabIndex = 9;
             this.buttonSix.Text = "6";
             this.buttonSix.UseVisualStyleBackColor = true;
-            this.buttonSix.Click += new System.EventHandler(this.buttonSix_Click);
+            this.buttonSix.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonMultiply
             // 
@@ -152,6 +155,7 @@ namespace Calculator
             this.buttonFive.TabIndex = 6;
             this.buttonFive.Text = "5";
             this.buttonFive.UseVisualStyleBackColor = true;
+            this.buttonFive.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonFour
             // 
@@ -163,6 +167,7 @@ namespace Calculator
             this.buttonFour.TabIndex = 5;
             this.buttonFour.Text = "4";
             this.buttonFour.UseVisualStyleBackColor = true;
+            this.buttonFour.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonThree
             // 
@@ -174,7 +179,7 @@ namespace Calculator
             this.buttonThree.TabIndex = 14;
             this.buttonThree.Text = "3";
             this.buttonThree.UseVisualStyleBackColor = true;
-            this.buttonThree.Click += new System.EventHandler(this.buttonThree_Click);
+            this.buttonThree.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonSubtract
             // 
@@ -197,17 +202,19 @@ namespace Calculator
             this.buttonTwo.TabIndex = 11;
             this.buttonTwo.Text = "2";
             this.buttonTwo.UseVisualStyleBackColor = true;
+            this.buttonTwo.Click += new System.EventHandler(this.button_Click);
             // 
-            // button15
+            // buttonOne
             // 
-            this.button15.Font = new System.Drawing.Font("Garamond", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button15.Location = new System.Drawing.Point(14, 332);
-            this.button15.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(71, 56);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "1";
-            this.button15.UseVisualStyleBackColor = true;
+            this.buttonOne.Font = new System.Drawing.Font("Garamond", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonOne.Location = new System.Drawing.Point(14, 332);
+            this.buttonOne.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.buttonOne.Name = "buttonOne";
+            this.buttonOne.Size = new System.Drawing.Size(71, 56);
+            this.buttonOne.TabIndex = 10;
+            this.buttonOne.Text = "1";
+            this.buttonOne.UseVisualStyleBackColor = true;
+            this.buttonOne.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonZero
             // 
@@ -218,7 +225,7 @@ namespace Calculator
             this.buttonZero.TabIndex = 15;
             this.buttonZero.Text = "0";
             this.buttonZero.UseVisualStyleBackColor = true;
-            this.buttonZero.Click += new System.EventHandler(this.buttonZero_Click);
+            this.buttonZero.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonPoint
             // 
@@ -229,6 +236,7 @@ namespace Calculator
             this.buttonPoint.TabIndex = 19;
             this.buttonPoint.Text = ".";
             this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonResult
             // 
@@ -250,21 +258,35 @@ namespace Calculator
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textDisplayResult
             // 
-            this.textBox1.Font = new System.Drawing.Font("Garamond", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(14, 111);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(402, 70);
-            this.textBox1.TabIndex = 20;
+            this.textDisplayResult.Font = new System.Drawing.Font("Garamond", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textDisplayResult.Location = new System.Drawing.Point(14, 111);
+            this.textDisplayResult.Multiline = true;
+            this.textDisplayResult.Name = "textDisplayResult";
+            this.textDisplayResult.Size = new System.Drawing.Size(402, 70);
+            this.textDisplayResult.TabIndex = 20;
+            this.textDisplayResult.Text = "0";
+            this.textDisplayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(14, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 33);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 467);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textDisplayResult);
             this.Controls.Add(this.buttonPoint);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonResult);
@@ -272,7 +294,7 @@ namespace Calculator
             this.Controls.Add(this.buttonThree);
             this.Controls.Add(this.buttonSubtract);
             this.Controls.Add(this.buttonTwo);
-            this.Controls.Add(this.button15);
+            this.Controls.Add(this.buttonOne);
             this.Controls.Add(this.buttonSix);
             this.Controls.Add(this.buttonMultiply);
             this.Controls.Add(this.buttonClear);
@@ -310,12 +332,13 @@ namespace Calculator
         private System.Windows.Forms.Button buttonThree;
         private System.Windows.Forms.Button buttonSubtract;
         private System.Windows.Forms.Button buttonTwo;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button buttonOne;
         private System.Windows.Forms.Button buttonZero;
         private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonResult;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textDisplayResult;
+        private System.Windows.Forms.Label label1;
     }
 }
 
