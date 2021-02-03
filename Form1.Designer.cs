@@ -49,7 +49,7 @@ namespace Calculator
             this.buttonResult = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textDisplayResult = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCurrentOp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSeven
@@ -86,6 +86,7 @@ namespace Calculator
             this.buttonClearEntry.TabIndex = 2;
             this.buttonClearEntry.Text = "CE";
             this.buttonClearEntry.UseVisualStyleBackColor = true;
+            this.buttonClearEntry.Click += new System.EventHandler(this.buttonClearEntry_Click);
             // 
             // buttonDivide
             // 
@@ -97,6 +98,7 @@ namespace Calculator
             this.buttonDivide.TabIndex = 3;
             this.buttonDivide.Text = "/";
             this.buttonDivide.UseVisualStyleBackColor = true;
+            this.buttonDivide.Click += new System.EventHandler(this.operator_Click);
             // 
             // buttonNine
             // 
@@ -133,6 +135,7 @@ namespace Calculator
             this.buttonMultiply.Text = "*";
             this.buttonMultiply.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonMultiply.UseVisualStyleBackColor = true;
+            this.buttonMultiply.Click += new System.EventHandler(this.operator_Click);
             // 
             // buttonClear
             // 
@@ -144,6 +147,7 @@ namespace Calculator
             this.buttonClear.TabIndex = 7;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonFive
             // 
@@ -191,6 +195,7 @@ namespace Calculator
             this.buttonSubtract.TabIndex = 13;
             this.buttonSubtract.Text = "-";
             this.buttonSubtract.UseVisualStyleBackColor = true;
+            this.buttonSubtract.Click += new System.EventHandler(this.operator_Click);
             // 
             // buttonTwo
             // 
@@ -247,6 +252,7 @@ namespace Calculator
             this.buttonResult.TabIndex = 17;
             this.buttonResult.Text = "=";
             this.buttonResult.UseVisualStyleBackColor = true;
+            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
             // buttonAdd
             // 
@@ -257,6 +263,7 @@ namespace Calculator
             this.buttonAdd.TabIndex = 18;
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.operator_Click);
             // 
             // textDisplayResult
             // 
@@ -269,23 +276,23 @@ namespace Calculator
             this.textDisplayResult.Text = "0";
             this.textDisplayResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // labelCurrentOp
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(14, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 33);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "label1";
+            this.labelCurrentOp.AutoSize = true;
+            this.labelCurrentOp.BackColor = System.Drawing.Color.White;
+            this.labelCurrentOp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCurrentOp.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelCurrentOp.Location = new System.Drawing.Point(14, 30);
+            this.labelCurrentOp.Name = "labelCurrentOp";
+            this.labelCurrentOp.Size = new System.Drawing.Size(2, 33);
+            this.labelCurrentOp.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 467);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCurrentOp);
             this.Controls.Add(this.textDisplayResult);
             this.Controls.Add(this.buttonPoint);
             this.Controls.Add(this.buttonAdd);
@@ -338,7 +345,8 @@ namespace Calculator
         private System.Windows.Forms.Button buttonResult;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TextBox textDisplayResult;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelcurr;
+        private System.Windows.Forms.Label labelCurrentOp;
     }
 }
 
